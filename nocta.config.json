@@ -1,0 +1,13 @@
+{
+  "style": "default",
+  "tsx": true,
+  "theme": "charcoal",
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css"
+  },
+  "aliases": {
+    "components": "components",
+    "utils": "lib/utils"
+  }
+}
