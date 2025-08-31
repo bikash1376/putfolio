@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const avatarVariants = cva(
 	[
@@ -150,8 +151,9 @@ export const Avatar: React.FC<AvatarProps> = ({
 			{...props}
 		>
 			{showImage && (
-				<img
+				<Image
 					src={src}
+					
 					alt=""
 					className={cn(
 						"h-full w-full object-cover",

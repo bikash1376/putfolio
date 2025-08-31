@@ -32,7 +32,7 @@ export function AuthModal({ trigger, defaultMode = "signin" }: AuthModalProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        {trigger || <Button variant="outline">Sign In</Button>}
+        {trigger || <Button variant="secondary">Sign In</Button>}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

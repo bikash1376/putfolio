@@ -68,7 +68,7 @@ export default function Home() {
           const { data, error } = await supabase
             .from("profiles")
             .select("*")
-            .eq("user_id", user.id)
+            .eq("user_id", user!.id)
             .single();
           
           if (!error && data) {

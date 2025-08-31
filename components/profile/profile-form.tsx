@@ -4,9 +4,9 @@ import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormField, FormLabel, FormControl, FormDescription, FormActions } from "@/components/ui/form";
+import { Form, FormField, FormLabel, FormControl, FormActions } from "@/components/ui/form";
 import { Avatar } from "@/components/ui/avatar";
-import { uploadImage, getOptimizedImageUrl } from "@/lib/cloudinary";
+import { uploadImage} from "@/lib/cloudinary";
 import { supabase } from "@/lib/supabase";
 
 interface SocialLink {
@@ -29,7 +29,7 @@ interface ProfileFormData {
 
 interface ProfileFormProps {
   userId: string;
-  onSuccess: (profile: any) => void;
+  onSuccess: (profile: unknown) => void;
   onCancel: () => void;
 }
 
@@ -71,7 +71,7 @@ export function ProfileForm({ userId, onSuccess, onCancel }: ProfileFormProps) {
         profilePicture: result.secure_url
       }));
     } catch (err) {
-      setError("Failed to upload image. Please try again.");
+      console.error("Failed to upload image. Please try again.");
     } finally {
       setUploadingImage(false);
     }
@@ -162,7 +162,7 @@ export function ProfileForm({ userId, onSuccess, onCancel }: ProfileFormProps) {
 
       onSuccess(profile);
     } catch (err) {
-      setError("An unexpected error occurred");
+      console.error("An unexpected error occurred", err);
     } finally {
       setLoading(false);
     }

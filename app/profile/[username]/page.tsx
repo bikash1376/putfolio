@@ -61,7 +61,7 @@ export default function ProfilePage({
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-2">Profile Not Found</h1>
           <p className="text-nocta-600 dark:text-nocta-400 mb-4">
-            The profile @{username} doesn't exist
+            The profile @{username} doesn&apos;t exist
           </p>
           <Link href="/">
             <Button>Go Home</Button>

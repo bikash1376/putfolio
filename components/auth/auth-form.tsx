@@ -25,7 +25,7 @@ export function AuthForm({ mode, onSuccess }: AuthFormProps) {
 
     try {
       if (mode === "signup") {
-        const { data, error } = await signUp(email, password);
+        const { error } = await signUp(email, password);
         
         if (error) {
           setError(error.message);
@@ -43,7 +43,7 @@ export function AuthForm({ mode, onSuccess }: AuthFormProps) {
         }
       }
     } catch (err) {
-      setError("An unexpected error occurred");
+      console.error("An unexpected error occurred", err);
     } finally {
       setLoading(false);
     }
@@ -60,7 +60,7 @@ export function AuthForm({ mode, onSuccess }: AuthFormProps) {
         <div>
           <h3 className="text-lg font-semibold mb-2">Check your email!</h3>
           <p className="text-nocta-600 dark:text-nocta-400 mb-4">
-            We've sent a confirmation link to <strong>{email}</strong>
+            We&apos;ve sent a confirmation link to <strong>{email}</strong>
           </p>
           <p className="text-sm text-nocta-500">
             Click the link in your email to verify your account and start creating your profile.
